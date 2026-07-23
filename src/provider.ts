@@ -91,11 +91,14 @@ export class PiChatProvider implements vscode.LanguageModelChatProvider {
         // VS Code may send: "pi/provider:model-id" or just "provider:model-id"
         let modelId = model.id;
         
-        // Strip vendor prefix if present
-        if (modelId.includes('/')) {
-            const parts = modelId.split('/');
-            modelId = parts.slice(1).join('/');
-            debug('[Pi Provider] Stripped vendor prefix, model ID:', modelId);
+        // Only strip a literal leading "pi/" vendor prefix. Do NOT split on
+        // arbitrary slashes: OpenRouter model IDs (e.g.
+        // "openrouter:anthropic/claude-3.5-sonnet") legitimately contain
+        // slashes, and the old split('/') logic mangled them, producing
+        // "Unknown model / not registered by the Pi provider" errors.
+        if (modelId.startsWith('pi/')) {
+            modelId = modelId.slice(3);
+            debug('[Pi Provider] Stripped pi/ vendor prefix, model ID:', modelId);
         }
         
         // Look up provider from our map (we stored it during registration)

@@ -2,7 +2,7 @@
   "name": "vscode-pi-model-chat-provider",
   "displayName": "Pi Coding Agent - Language Model Provider",
   "description": "Use Pi Coding Agent directly from Copilot Chat via VS Code's Language Model Provider API",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "publisher": "tintinweb",
   "preview": true,
   "icon": "images/pi-logo-black.png",
