@@ -17,7 +17,7 @@ https://github.com/user-attachments/assets/196cffa2-660e-4b7e-911b-389830420579
 ## Features
 
 - **Universal Model Access**: Use Pi with any VS Code extension that supports language models
-- **Dynamic Model Discovery**: Automatically detects all configured models from Pi
+- **Dynamic Model Discovery**: Automatically detects all configured models from Pi, across every provider Pi supports (Anthropic, OpenAI, OpenRouter, and more)
 - **Tool Execution**: Pi handles tools internally (file operations, bash commands, etc.)
 - **Streaming Responses**: Real-time streaming of LLM responses
 - **Tool Transparency**: Optional display of tool execution as text annotations

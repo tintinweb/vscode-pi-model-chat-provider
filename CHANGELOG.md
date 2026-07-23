@@ -2,6 +2,16 @@
 
 All notable changes to the "vscode-pi-model-chat-provider" extension will be documented in this file.
 
+## [0.2.1] - 2026-07-23
+
+### Fixed
+- OpenRouter (and any provider whose model IDs contain a slash, e.g.
+  `openrouter:anthropic/claude-3.5-sonnet`) no longer fails with
+  `Unknown model … not registered by the Pi provider`. The vendor-prefix
+  stripping now removes only a literal leading `pi/` instead of splitting on
+  arbitrary slashes, so the lookup key matches the one used at registration.
+  Thanks to @DeluxeOwl (#4).
+
 ## [0.2.0] - 2026-05-14
 
 ### Fixed
